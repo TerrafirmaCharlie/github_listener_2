@@ -1,7 +1,7 @@
 from github import Github
 import markdown2
 
-access_token = "8b7d51a8152ae5a842acfc5b747c15f0eb156a07"
+access_token = "7da5b1a4b60292b6a050c89da31029d670e7e862"
 g = Github(access_token)
 
 
@@ -14,11 +14,11 @@ def font_colour_picker(colour_font_desc):
     return new_description
 
 
-repo_find = g.get_repo("TerrafirmaCharlie/github_listener")
+repo_find = g.get_repo("TerrafirmaCharlie/github_listener_2")
 repo_desc = repo_find.description
 commits = repo_find.get_commits()
 
-with open("C:\\Users\\My Desktop\\Documents\\GitHub\\github_listener\\commits.md", 'a') as f:
+with open("C:\\Users\\My Desktop\\Documents\\GitHub\\github_listener_2\\commits.md", 'a') as f:
     f.truncate(0)
 
     for commit in commits:
@@ -38,7 +38,7 @@ with open("C:\\Users\\My Desktop\\Documents\\GitHub\\github_listener\\commits.md
         f.write(f"####Description:\n {description}\n")
         f.write("<hr>\n")
 
-md_to_html = markdown2.markdown_path("C:\\Users\\My Desktop\\Documents\\GitHub\\github_listener\\commits.md")
+md_to_html = markdown2.markdown_path("C:\\Users\\My Desktop\\Documents\\GitHub\\github_listener_2\\commits.md")
 
 Html_file = open("commits.html", "w")
 Html_file.write(md_to_html)
